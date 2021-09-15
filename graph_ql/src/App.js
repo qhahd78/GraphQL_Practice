@@ -1,8 +1,17 @@
+import React from 'react';
+import { ApolloProvider } from 'react-apollo';
+// client 를 전역으로 내려주기 위해 
+import client from '../src/apollo/client.js';
+import Cat from './Components/Main/Cat.js';
+
+
 function App() {
   return (
-    <>
-      안녕
-    </>
+    // client 전역으로 사용 
+    <ApolloProvider client= {client}>
+      <h1>React Apollo 안녕</h1>
+      <Cat />
+    </ApolloProvider>
   );
 }
 
