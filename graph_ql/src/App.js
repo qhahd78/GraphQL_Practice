@@ -9,7 +9,6 @@ function App() {
   return (
     // client 전역으로 사용 
     <ApolloProvider client= {client}>
-      <h1>React Apollo 안녕</h1>
       <Cat />
     </ApolloProvider>
   );

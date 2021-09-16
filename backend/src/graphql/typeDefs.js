@@ -13,6 +13,7 @@ const typeDefs = gql`
         name: String! 
         age: Int!
         face: String!
+        img: String!
     }
 
     type Query {

@@ -10,6 +10,7 @@ const GET_CATS = gql`
             name
             age
             face
+            img
         }
     }
 `
@@ -17,7 +18,6 @@ const GET_CATS = gql`
 function Cat() {
     return (
         <div>
-            cat 컴포넌트 
             {/* query 컴포넌트  */}
             <Query query = {GET_CATS}>
                 {({loading, error, data}) => {
@@ -26,8 +26,13 @@ function Cat() {
                     return (
                         <p>
                             {/* 데이터 받아서 map 돌리기 */}
-                            {data.cats.map(({id, name, age, face}) => (
-                                <p key={id}>이름 : {name}, 나이 : {age} 특징 : {face}</p>
+                            {data.cats.map(({id, name, age, face, img}) => (
+                                <>
+                                    <p key={id}>이름 : {name}, 나이 : {age} 특징 : {face}</p>
+                                    <p>
+                                        <img src={img} alt="없음"></img>
+                                    </p>
+                                </>
                             ))}
                         </p>
                     )
